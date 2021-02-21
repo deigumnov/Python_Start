@@ -1,3 +1,4 @@
 venv/*
 .idea
 *.txt
+PyMOTW-3-1.0/*
