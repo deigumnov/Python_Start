@@ -13,10 +13,8 @@ soup = BeautifulSoup(html, "html.parser")
 
 mydivs = soup.find_all("div", class_="author")
 
-index = 0
-for div in mydivs:
+for index, div in enumerate(mydivs):
     print(index, '', end='')
     for item in div:
         print(item.get_text(), end=' ')
     print()
-    index += 1

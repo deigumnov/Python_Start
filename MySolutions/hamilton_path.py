@@ -26,4 +26,4 @@ def square_sums(num):
     return False
 
 
-print(square_sums(15))
+print(square_sums(100))
