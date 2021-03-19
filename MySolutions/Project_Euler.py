@@ -1,7 +1,7 @@
 from datetime import datetime
 from multiprocessing import Process
 N_MAX = 300
-N_PROC = 16
+N_PROC = 12
 l = [i ** 5 for i in range(2 * N_MAX)]
 
 
@@ -20,132 +20,23 @@ def proc(left, right, name: str):
 if __name__ == '__main__':
     start_time = datetime.now()
 
-    if N_PROC == 4:
-        thread1 = Process(target=proc, args=(1, int(1 * N_MAX//N_PROC), 'pr1',))
-        thread2 = Process(target=proc, args=(int(1 * N_MAX//N_PROC), int(2 * N_MAX//N_PROC), 'pr2',))
-        thread3 = Process(target=proc, args=(int(2 * N_MAX//N_PROC), int(3 * N_MAX//N_PROC), 'pr3',))
-        thread4 = Process(target=proc, args=(int(3 * N_MAX//N_PROC), N_MAX + 1, 'pr4',))
-        thread1.start()
-        thread2.start()
-        thread3.start()
-        thread4.start()
-        thread1.join()
-        thread2.join()
-        thread3.join()
-        thread4.join()
-    elif N_PROC == 8:
-        thread1 = Process(target=proc, args=(1, int(1 * N_MAX//N_PROC), 'pr1',))
-        thread2 = Process(target=proc, args=(int(1 * N_MAX//N_PROC), int(2 * N_MAX//N_PROC), 'pr2',))
-        thread3 = Process(target=proc, args=(int(2 * N_MAX//N_PROC), int(3 * N_MAX//N_PROC), 'pr3',))
-        thread4 = Process(target=proc, args=(int(3 * N_MAX//N_PROC), int(4 * N_MAX//N_PROC), 'pr4',))
-        thread5 = Process(target=proc, args=(int(4 * N_MAX//N_PROC), int(5 * N_MAX//N_PROC), 'pr5',))
-        thread6 = Process(target=proc, args=(int(5 * N_MAX//N_PROC), int(6 * N_MAX//N_PROC), 'pr6',))
-        thread7 = Process(target=proc, args=(int(6 * N_MAX//N_PROC), int(7 * N_MAX//N_PROC), 'pr7',))
-        thread8 = Process(target=proc, args=(int(7 * N_MAX//N_PROC), int(8 * N_MAX//N_PROC), 'pr8',))
-        thread1.start()
-        thread2.start()
-        thread3.start()
-        thread4.start()
-        thread5.start()
-        thread6.start()
-        thread7.start()
-        thread8.start()
-
-        thread8.join()
-        thread7.join()
-        thread6.join()
-        thread5.join()
-        thread4.join()
-        thread3.join()
-        thread2.join()
-        thread1.join()
-
-    elif N_PROC == 12:
-        thread1 = Process(target=proc, args=(1, int(1 * N_MAX//N_PROC), 'pr1',))
-        thread2 = Process(target=proc, args=(int(1 * N_MAX//N_PROC), int(2 * N_MAX//N_PROC), 'pr2',))
-        thread3 = Process(target=proc, args=(int(2 * N_MAX//N_PROC), int(3 * N_MAX//N_PROC), 'pr3',))
-        thread4 = Process(target=proc, args=(int(3 * N_MAX//N_PROC), int(4 * N_MAX//N_PROC), 'pr4',))
-        thread5 = Process(target=proc, args=(int(4 * N_MAX//N_PROC), int(5 * N_MAX//N_PROC), 'pr5',))
-        thread6 = Process(target=proc, args=(int(5 * N_MAX//N_PROC), int(6 * N_MAX//N_PROC), 'pr6',))
-        thread7 = Process(target=proc, args=(int(6 * N_MAX//N_PROC), int(7 * N_MAX//N_PROC), 'pr7',))
-        thread8 = Process(target=proc, args=(int(7 * N_MAX//N_PROC), int(8 * N_MAX//N_PROC), 'pr8',))
-        thread9 = Process(target=proc, args=(int(8 * N_MAX//N_PROC), int(9 * N_MAX//N_PROC), 'pr9',))
-        thread10 = Process(target=proc, args=(int(9 * N_MAX//N_PROC), int(10 * N_MAX//N_PROC), 'pr10',))
-        thread11 = Process(target=proc, args=(int(10 * N_MAX//N_PROC), int(11 * N_MAX//N_PROC), 'pr11',))
-        thread12 = Process(target=proc, args=(int(11 * N_MAX//N_PROC), N_MAX + 1, 'pr12',))
-        thread1.start()
-        thread2.start()
-        thread3.start()
-        thread4.start()
-        thread5.start()
-        thread6.start()
-        thread7.start()
-        thread8.start()
-        thread9.start()
-        thread10.start()
-        thread11.start()
-        thread12.start()
-        thread1.join()
-        thread2.join()
-        thread3.join()
-        thread4.join()
-        thread5.join()
-        thread6.join()
-        thread7.join()
-        thread8.join()
-        thread9.join()
-        thread10.join()
-        thread11.join()
-        thread12.join()
-    elif N_PROC == 16:
-        thread1 = Process(target=proc, args=(1, int(1 * N_MAX//N_PROC), 'pr1',))
-        thread2 = Process(target=proc, args=(int(1 * N_MAX//N_PROC), int(2 * N_MAX//N_PROC), 'pr2',))
-        thread3 = Process(target=proc, args=(int(2 * N_MAX//N_PROC), int(3 * N_MAX//N_PROC), 'pr3',))
-        thread4 = Process(target=proc, args=(int(3 * N_MAX//N_PROC), int(4 * N_MAX//N_PROC), 'pr4',))
-        thread5 = Process(target=proc, args=(int(4 * N_MAX//N_PROC), int(5 * N_MAX//N_PROC), 'pr5',))
-        thread6 = Process(target=proc, args=(int(5 * N_MAX//N_PROC), int(6 * N_MAX//N_PROC), 'pr6',))
-        thread7 = Process(target=proc, args=(int(6 * N_MAX//N_PROC), int(7 * N_MAX//N_PROC), 'pr7',))
-        thread8 = Process(target=proc, args=(int(7 * N_MAX//N_PROC), int(8 * N_MAX//N_PROC), 'pr8',))
-        thread9 = Process(target=proc, args=(int(8 * N_MAX//N_PROC), int(9 * N_MAX//N_PROC), 'pr9',))
-        thread10 = Process(target=proc, args=(int(9 * N_MAX//N_PROC), int(10 * N_MAX//N_PROC), 'pr10',))
-        thread11 = Process(target=proc, args=(int(10 * N_MAX//N_PROC), int(11 * N_MAX//N_PROC), 'pr11',))
-        thread12 = Process(target=proc, args=(int(11 * N_MAX//N_PROC), int(12 * N_MAX//N_PROC), 'pr12',))
-        thread13 = Process(target=proc, args=(int(12 * N_MAX//N_PROC), int(13 * N_MAX//N_PROC), 'pr13',))
-        thread14 = Process(target=proc, args=(int(13 * N_MAX//N_PROC), int(14 * N_MAX//N_PROC), 'pr14',))
-        thread15 = Process(target=proc, args=(int(14 * N_MAX//N_PROC), int(15 * N_MAX//N_PROC), 'pr15',))
-        thread16 = Process(target=proc, args=(int(15 * N_MAX//N_PROC), N_MAX + 1, 'pr16',))
-        thread1.start()
-        thread2.start()
-        thread3.start()
-        thread4.start()
-        thread5.start()
-        thread6.start()
-        thread7.start()
-        thread8.start()
-        thread9.start()
-        thread10.start()
-        thread11.start()
-        thread12.start()
-        thread13.start()
-        thread14.start()
-        thread15.start()
-        thread16.start()
-        thread1.join()
-        thread2.join()
-        thread3.join()
-        thread4.join()
-        thread5.join()
-        thread6.join()
-        thread7.join()
-        thread8.join()
-        thread9.join()
-        thread10.join()
-        thread11.join()
-        thread12.join()
-        thread13.join()
-        thread14.join()
-        thread15.join()
-        thread16.join()
+    procs = [Process(target=proc,
+                     args=(1,
+                           int(1 * N_MAX // N_PROC),
+                           'pr0',))]
+    for i in range(1, N_PROC - 1):
+        procs.append(Process(target=proc,
+                             args=(int(i * N_MAX // N_PROC),
+                                   int((i + 1) * N_MAX // N_PROC),
+                                   'pr' + str(i),)))
+    procs.append(Process(target=proc,
+                         args=(int((N_PROC - 1) * N_MAX // N_PROC),
+                               N_MAX + 1,
+                               'pr' + str(N_PROC - 1),)))
+    for process in procs:
+        process.start()
+    for process in procs:
+        process.join()
     end_time = datetime.now()
     print(f'Количество процессов: {N_PROC}')
     print(f'Лимит: {N_MAX}')
