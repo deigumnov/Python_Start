@@ -1,6 +1,6 @@
 ## Python_Start
 ### My codewars Profile:
-[<img src=https://www.codewars.com/users/deigumnov/badges/large](https://www.codewars.com/users/deigumnov/)
+[<img src=https://www.codewars.com/users/deigumnov/badges/large>](https://www.codewars.com/users/deigumnov/)
 ### My solution for some tasks:
 * [Using Python to Access Web Data:](https://www.coursera.org/learn/python-network-data)
     * geoxml.py
